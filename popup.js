@@ -25,11 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update the UI to reflect current status
     function updateStatus(isActive) {
         if (isActive) {
+            // set badge text as 'on'
+            chrome.action.setBadgeText({ text: "on" });
+            chrome.action.setBadgeBackgroundColor({ color: "#4CAF50" });
+
             statusElement.textContent = "Active";
             statusElement.className = "active";
             startBtn.disabled = true;
             stopBtn.disabled = false;
         } else {
+            // set badge text as 'off'
+            chrome.action.setBadgeText({ text: "off" });
+            chrome.action.setBadgeBackgroundColor({ color: "#FF0000" });
+
             statusElement.textContent = "Inactive";
             statusElement.className = "";
             startBtn.disabled = false;
