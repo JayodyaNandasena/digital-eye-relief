@@ -50,7 +50,6 @@ function startTimer() {
 // Stop the timer
 function stopTimer() {
     chrome.alarms.clear("eyeReminderAlarm");
-    console.log("Timer stopped");
 }
 
 // Handle the alarm event
@@ -66,6 +65,8 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 function showNotification() {
+    const notificationId = "eyeReminder_" + Date.now();
+
     chrome.notifications.create(notificationId, {
         type: "basic",
         iconUrl: "images/alarm.png",
@@ -109,7 +110,7 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
 
             if (secondsLeft < 0) {
                 clearInterval(countdownInterval);
-                chrome.action.setBadgeText({text: ""});
+                chrome.action.setBadgeText({text: "0"});
 
                 // Clear notification and show completion
                 chrome.notifications.clear(countdownNotificationId);
@@ -120,6 +121,10 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
                     message: "Exercise completed. Your eyes thank you!",
                     priority: 2
                 });
+
+                // set badge text to 'on'
+                chrome.action.setBadgeText({ text: "on" });
+                chrome.action.setBadgeBackgroundColor({ color: "#4CAF50" });
             }
         }, 1000);
     }
