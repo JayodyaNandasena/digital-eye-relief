@@ -32,8 +32,6 @@ The extension sends a notification every 20 minutes, reminding users to take a b
 
 - **Simple UI**: The popup interface is kept minimal to avoid clutter, focusing solely on the most essential controls — allowing users to toggle the reminders and adjust settings with ease.
 
-- **User Customization**: Although the extension is designed around the 20-minute interval, the popup could potentially allow users to customize the notification frequency and enable/disable sound alerts in future versions for better flexibility.
-
 ### Future Improvements:
 
 - **Customization of Time Intervals**: In future versions, the extension could allow users to set their own intervals for the 20-20-20 rule based on their preferences.
@@ -48,9 +46,9 @@ This extension was built as part of a personal project aimed at promoting eye he
 
 1. Clone or download the repository to your local machine.
 2. Open the Chrome browser and navigate to `chrome://extensions/`.
-3. Enable "Developer mode" at the top right corner.
+3. Enable "Developer mode" in the top right corner.
 4. Click "Load unpacked" and select the project folder where the extension files are located.
-5. The extension should now be active and you will start receiving notifications every 20 minutes.
+5. The extension should now be active, and you will start receiving notifications every 20 minutes.
 6. After loading the extension, you will need to start the notifications manually. To do so:
    - Click the extension icon in the Chrome toolbar.
    - In the popup, click the "Start Notifications" button to begin receiving reminders every 20 minutes.
