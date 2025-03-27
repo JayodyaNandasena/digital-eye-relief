@@ -1,5 +1,4 @@
 # Digital Eye Relief Chrome Extension
-#### Video Demo: [URL HERE]
 
 #### Description:
 
